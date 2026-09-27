@@ -23,7 +23,7 @@ export default function Home() {
                 <h2>
                   EchoGPT</h2>
               </div>
-              <div className="flex">
+              <div className="flex justify-around">
                 <Search />
                 <PanelLeft />
               </div>
