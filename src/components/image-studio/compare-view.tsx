@@ -2,7 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { GitCompare, Sparkles, ArrowRight } from "lucide-react";
+import { GitCompare, Sparkles } from "lucide-react";
 import { Select, SelectContent, SelectItem , SelectTrigger, SelectValue} from "@/components/ui/select";
 import { useState } from "react";
 import Image from "next/image";

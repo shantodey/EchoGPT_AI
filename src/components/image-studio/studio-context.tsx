@@ -141,6 +141,33 @@ export const demoHistorySessions: HistorySession[] = [
     aspectRatio: "4:3",
     imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
   },
+  {
+    id: "15",
+    title: "প্রকল্প নির্বাচন যাচাই",
+    timestamp: "3 weeks ago",
+    prompt: "Architectural blueprint spread out on pine drafting table with brass compass",
+    model: "GPT Image",
+    aspectRatio: "4:3",
+    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "16",
+    title: "প্রকল্প নির্বাচন যাচাই",
+    timestamp: "3 weeks ago",
+    prompt: "Architectural blueprint spread out on pine drafting table with brass compass",
+    model: "GPT Image",
+    aspectRatio: "4:3",
+    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "17",
+    title: "প্রকল্প নির্বাচন যাচাই",
+    timestamp: "3 weeks ago",
+    prompt: "Architectural blueprint spread out on pine drafting table with brass compass",
+    model: "GPT Image",
+    aspectRatio: "4:3",
+    imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 interface StudioContextType {
@@ -189,17 +216,8 @@ export function StudioProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <StudioContext.Provider
-      value={{
-        activeTab,
-        setActiveTab,
-        isSidebarOpen,
-        setIsSidebarOpen,
-        toggleSidebar,
-        isHistoryOpen,
-        toggleHistory,
-        selectedSessionId,
-        selectSession,
-        activeSession,
+      value={{  activeTab,  setActiveTab,  isSidebarOpen,  setIsSidebarOpen,  toggleSidebar,  
+        isHistoryOpen,  toggleHistory,  selectedSessionId,  selectSession,  activeSession,
       }}
     >
       {children}
