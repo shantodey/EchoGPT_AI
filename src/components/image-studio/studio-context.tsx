@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState } from "react";
 
-export type StudioTab = "image-studio" | "video-studio" | "compare";
+export type StudioTab = "welcome" | "image-studio" | "video-studio" | "compare";
 
 export interface HistorySession {
   id: string;
@@ -184,26 +184,24 @@ interface StudioContextType {
 }
 
 const StudioContext = createContext<StudioContextType>({
-  activeTab: "image-studio",
+  activeTab: "welcome",
   setActiveTab: () => {},
   isSidebarOpen: true,
   setIsSidebarOpen: () => {},
   toggleSidebar: () => {},
   isHistoryOpen: true,
   toggleHistory: () => {},
-  selectedSessionId: "2",
+  selectedSessionId: null,
   selectSession: () => {},
-  activeSession: demoHistorySessions[1],
+  activeSession: null,
 });
 
 export function StudioProvider({ children }: { children: React.ReactNode }) {
-  const [activeTab, setActiveTab] = useState<StudioTab>("image-studio");
+  const [activeTab, setActiveTab] = useState<StudioTab>("welcome");
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
   const [isHistoryOpen, setIsHistoryOpen] = useState<boolean>(true);
-  const [selectedSessionId, setSelectedSessionId] = useState<string | null>("2");
-  const [activeSession, setActiveSession] = useState<HistorySession | null>(
-    demoHistorySessions[1]
-  );
+  const [selectedSessionId, setSelectedSessionId] = useState<string | null>(null);
+  const [activeSession, setActiveSession] = useState<HistorySession | null>(null);
 
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
   const toggleHistory = () => setIsHistoryOpen((prev) => !prev);

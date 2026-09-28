@@ -8,6 +8,7 @@ import { CreationsSection } from "@/components/image-studio/creations-section";
 import { MobileNav } from "@/components/image-studio/mobile-nav";
 import { VideoStudioView } from "@/components/image-studio/video-studio-view";
 import { CompareView } from "@/components/image-studio/compare-view";
+import { ChatWelcomeView } from "@/components/image-studio/chat-welcome-view";
 import { StudioProvider, useStudio } from "@/components/image-studio/studio-context";
 
 function StudioContent() {
@@ -23,20 +24,24 @@ function StudioContent() {
         <Topbar />
 
         <main className="flex-1 overflow-y-auto pb-20 md:pb-8">
-          <div className="mx-auto w-full max-w-2xl px-4 md:px-6 py-4">
-            {activeTab === "image-studio" && (
-              <>
-                <StudioHeader />
-                <PromptComposer />
-                <div className="mt-8">
-                  <CreationsSection />
-                </div>
-              </>
-            )}
+          {activeTab === "welcome" && <ChatWelcomeView />}
 
-            {activeTab === "video-studio" && <VideoStudioView />}
-            {activeTab === "compare" && <CompareView />}
-          </div>
+          {activeTab !== "welcome" && (
+            <div className="mx-auto w-full max-w-2xl px-4 md:px-6 py-4">
+              {activeTab === "image-studio" && (
+                <>
+                  <StudioHeader />
+                  <PromptComposer />
+                  <div className="mt-8">
+                    <CreationsSection />
+                  </div>
+                </>
+              )}
+
+              {activeTab === "video-studio" && <VideoStudioView />}
+              {activeTab === "compare" && <CompareView />}
+            </div>
+          )}
         </main>
       </div>
 
